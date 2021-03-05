@@ -24,8 +24,8 @@ public class MyAppZalandoProblem extends AbstractThrowableProblem {
 
   @Override
   public String toString() {
-    /*Stream<String> parts = this.getParameters().entrySet().stream().map(Object::toString).filter(Objects::nonNull);
-    return this.getType().toString() + "{" + parts.collect(Collectors.joining(", ")) + "}";*/
-    return "";
+    Stream<String> parts = this.getParameters().entrySet().stream().map(Object::toString).filter(Objects::nonNull);
+    return this.getType().toString() + "{" + parts.collect(Collectors.joining(", ")) + "}";
+    //return "";
   }
 }
