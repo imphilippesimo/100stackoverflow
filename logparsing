@@ -1,0 +1,6 @@
+# HELP cpu_usage_total The total amount of CPU
+# TYPE cpu_usage_total gauge
+cpu_usage_total 0.24950100481510162
+# HELP memory_usage_total The total amount of MEMORY
+# TYPE memory_usage_total gauge
+memory_usage_total 30.0

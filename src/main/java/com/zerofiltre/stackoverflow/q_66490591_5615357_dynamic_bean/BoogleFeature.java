@@ -2,7 +2,13 @@ package com.zerofiltre.stackoverflow.q_66490591_5615357_dynamic_bean;
 
 public class BoogleFeature {
 
-  public String doBoogle(String boogler) {
-    return boogler + " is boogling";
+  private String sdk;
+
+  public BoogleFeature(String sdk) {
+    this.sdk = sdk;
+  }
+
+  public String doBoogle() {
+    return "Boogling with " + sdk;
   }
 }

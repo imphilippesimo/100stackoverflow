@@ -1,15 +1,15 @@
 package com.zerofiltre.stackoverflow.q_66417284_5615357_zalando;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.zalando.problem.spring.web.advice.security.SecurityProblemSupport;
 
-//@Configuration
-//@EnableWebSecurity
+@Order(2)
+@EnableWebSecurity
 @Import(SecurityProblemSupport.class)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 

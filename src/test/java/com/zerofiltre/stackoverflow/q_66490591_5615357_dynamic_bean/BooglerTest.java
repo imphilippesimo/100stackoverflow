@@ -12,9 +12,9 @@ public class BooglerTest {
 
   @Test
   void boogleFeature_ShouldBeInstantiated() {
-    String result = boogleFeature.doBoogle("The boogler");
+    String result = boogleFeature.doBoogle();
 
-    assert "The boogler is boogling".equals(result);
+    assert "Boogling with Boogle SDK".equals(result);
   }
 
 }

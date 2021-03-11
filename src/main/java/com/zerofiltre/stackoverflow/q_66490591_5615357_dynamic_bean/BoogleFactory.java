@@ -13,10 +13,11 @@ public class BoogleFactory {
 
   @PostConstruct
   public void createBoggleClient() {
-    //do Stuff
+    //build the sdk
+    String sdk = "Boogle SDK";
 
     //then register the bean in spring context
-    context.registerBean(BoogleFeature.class);
+    context.registerBean(BoogleFeature.class,sdk);
   }
 
 }

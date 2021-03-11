@@ -1,16 +1,17 @@
 package com.zerofiltre.stackoverflow.q_66483932_5615357_security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@Order(1)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
@@ -24,7 +25,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //disabling http basic Auth: too weak
         .httpBasic().disable()
         //disable csrf support (enabled by default) don't need it s we use jwt,
-        .csrf().disable();
+        .csrf().disable()
+
+        .authorizeRequests().antMatchers("/authenticate", "/metrics", "/actuator/**")
+        .permitAll()
+        .anyRequest().authenticated();
   }
 
   @Override
