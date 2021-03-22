@@ -1,4 +1,4 @@
-package com.zerofiltre.stackoverflow.q_66537233_5615357_propertysource;
+package com.zerofiltre.stackoverflow.q_66681373_5615357_config_properties;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -7,14 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class SecretTests {
+public class ConfigTest {
 
   @Autowired
-  private Secrets secrets;
+  private SecretDataClass secretDataClass;
 
   @Test
-  public void secrets_shouldNotBeNull(){
-    assertThat(secrets.getCredentialFileName()).isEqualTo("/my/file");
+  void data_ArePresent() {
+    assertThat(secretDataClass.getRegion()).isEqualTo("us-west-2");
   }
-
 }
